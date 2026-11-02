@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個人數位名片</title>
+
+  <!-- 引入 FontAwesome 圖示庫 (用於 Instagram 與 Email 圖示) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS 樣式直接寫在 <style> 標籤內 -->
+  <style>
+    /* ===================================
+       1. 基本頁面設定與莫蘭迪漸層背景
+       =================================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* 莫蘭迪柔灰與低飽和霧藍漸層 */
+      background: linear-gradient(135deg, #C9D6DF 0%, #F1F6F9 100%);
+      padding: 20px;
+    }
+
+    /* ===================================
+       2. 莫蘭迪現代風卡片主體 (玻璃擬態與微陰影)
+       =================================== */
+    .card {
+      width: 100%;
+      max-width: 350px;
+      /* 半透明白背景，帶磨砂玻璃效果 */
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 24px;
+      padding: 40px 28px;
+      text-align: center;
+      
+      /* 質感微陰影效果 (Soft Shadow) */
+      box-shadow: 0 10px 30px rgba(82, 97, 107, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      
+      /* 滑鼠懸停動畫過渡 */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* 滑鼠移到卡片上時輕微浮起 */
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(82, 97, 107, 0.18);
+    }
+
+    /* ===================================
+       3. 個人資料區塊 (大頭貼、名字、簡介)
+       =================================== */
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ffffff;
+      /* 大頭貼微陰影 */
+      box-shadow: 0 4px 14px rgba(82, 97, 107, 0.15);
+      margin-bottom: 20px;
+    }
+
+    .name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1E2022; /* 莫蘭迪深炭灰 */
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .bio {
+      font-size: 14px;
+      color: #556067; /* 莫蘭迪中灰 */
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    /* ===================================
+       4. 按鈕區塊 (Instagram & Email)
+       =================================== */
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 20px;
+      background: rgba(255, 255, 255, 0.85);
+      color: #333A42;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 14px;
+      border: 1px solid rgba(201, 214, 223, 0.5);
+      
+      /* 按鈕微陰影 */
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+      transition: all 0.25s ease;
+    }
+
+    .btn i {
+      font-size: 18px;
+    }
+
+    /* 按鈕懸停效果：變換為莫蘭迪石板灰藍 */
+    .btn:hover {
+      background: #52616B; /* 莫蘭迪經典灰藍 */
+      color: #ffffff;
+      border-color: #52616B;
+      box-shadow: 0 6px 16px rgba(82, 97, 107, 0.25);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 名片卡片區塊 -->
+  <div class="card">
+    
+    <!-- 1. 大頭貼 (修改 src 內的檔名或網址即可換照片) -->
+    <img class="avatar" src="https://i.postimg.cc/d01sSjYY/IMG-1273.jpg" alt="個人大頭貼">
+
+    <!-- 2. 名字 -->
+    <h1 class="name">沈亭妘</h1>
+
+    <!-- 3. 簡短介紹 -->
+    <p class="bio">熱愛視覺設計與生活美學，探索極簡與現代視覺的交會點。</p>
+
+    <!-- 4. 下方兩個按鈕 -->
+    <div class="button-group">
+      <!-- Instagram 按鈕 (修改 href 內的網址) -->
+      <a href="https://instagram.com/your_username" class="btn" target="_blank">
+        <i class="fa-brands fa-instagram"></i> Instagram
+      </a>
+
+      <!-- Email 按鈕 (修改 mailto: 後面的信箱) -->
+      <a href="mailto:your_email@example.com" class="btn">
+        <i class="fa-solid fa-envelope"></i> Email 聯絡我
+      </a>
+    </div>
+
+  </div>
+
+</body>
+</html>
